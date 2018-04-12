@@ -74,7 +74,7 @@ function serialEvent()
 		var sensors = split(inString, ','); //split the string on the commas
 		if(sensors.length>4) //if there are 5 elements
 		{
-			valA=sensors[0]; //element 0 is valA
+			valA=sensors[0]; //element 0 from array is valA
 			valB=sensors[1]; //element 1 is valB
 			valC=sensors[2]; //element 2 is valC
 			valD=sensors[3]; //element 3 is valD
@@ -101,7 +101,8 @@ function printList(portList) {
  }
 }
 
-function cloud()
+//I used individual functions for each image to make a more succint draw function
+function cloud() //placement of first image
 {
 	push();
 	//scale(0.25);
@@ -109,7 +110,7 @@ function cloud()
 	pop();
 }
 
-function fat()
+function fat() //placement of second image
 {
 	push();
 	scale(0.75);
@@ -117,21 +118,21 @@ function fat()
 	pop();
 }
 
-function flower()
+function flower()//placement of third image
 {
 	push();
 	image(flowerCat, 800, 200);
 	pop();
 }
 
-function hi()
+function hi() //placement of fourth image
 {
 	push();
 	image(hiCat, 200,600);
 	pop();
 }
 
-function hiss()
+function hiss() //placement of fifth image
 {
 	push();
 	image(hissCat, 850, 650, 350, 340);
@@ -140,9 +141,9 @@ function hiss()
 
 function draw() 
 {	
- background(0);
+ background(0); //call background so cats disappear when piano not pressed
 	
-	if(valA==0)
+	if(valA==0) //piano is active low so switch reads '0' when pressed
 	{
 		cloud();
 	}
